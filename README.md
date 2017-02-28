@@ -17,14 +17,17 @@ You can use ZYSScreenAudioRecorder like this:
 
 #pragma mark - event response
 - (IBAction)startRecordBtnClicked:(id)sender {
+    // start recording
     [self.recorder startRecording];
 }
 
 - (IBAction)pauseRecordBtnClicked:(id)sender {
+    // pause recording
     [self.recorder pauseRecording];
 }
 
 - (IBAction)stopRecordBtnClicked:(id)sender {
+    // stop recording, and handle the mp4 file
     [self.recorder stopRecordingWithHandler:^(NSString *videoPath) {
         dispatch_async(dispatch_get_main_queue(), ^{
             // Now you can handle the mp4 file, e.g. to play...
