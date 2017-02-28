@@ -8,15 +8,15 @@
 
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
-#import "JKScreenRecorder.h"
+#import "ZYSScreenRecorder.h"
 
-@interface JKScreenRecorder ()
+@interface ZYSScreenRecorder ()
 
 @property (nonatomic, assign) NSTimeInterval duration;
 @property (nonatomic, strong) NSString *videoPath;
 
-@property (nonatomic, copy) JKScreenRecording screenRecording;
-@property (nonatomic, copy) JKScreenRecordStop screenRecordStop;
+@property (nonatomic, copy) ZYSScreenRecording screenRecording;
+@property (nonatomic, copy) ZYSScreenRecordStop screenRecordStop;
 
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, assign) NSInteger frameCount;
@@ -28,7 +28,7 @@
 
 @end
 
-@implementation JKScreenRecorder
+@implementation ZYSScreenRecorder
 
 #pragma mark - life cycle
 - (instancetype)init {
@@ -65,7 +65,7 @@
     }
 }
 
-- (void)stopRecordingWithHandler:(JKScreenRecordStop)handler {
+- (void)stopRecordingWithHandler:(ZYSScreenRecordStop)handler {
     if (self.timer) {
         [self.timer invalidate];
         self.timer = nil;
@@ -75,7 +75,7 @@
     [self.videoWriter finishWritingWithCompletionHandler:^{
         dispatch_async(dispatch_get_main_queue(), ^{
             if (handler) {
-                handler(self.videoPath,nil);
+                handler(self.videoPath);
             }
         });
         
@@ -86,7 +86,7 @@
 }
 
 #pragma mark - recording method, send duration
-- (void)screenRecording:(JKScreenRecording)screenRecording {
+- (void)screenRecording:(ZYSScreenRecording)screenRecording {
     self.screenRecording = [screenRecording copy];
 }
 

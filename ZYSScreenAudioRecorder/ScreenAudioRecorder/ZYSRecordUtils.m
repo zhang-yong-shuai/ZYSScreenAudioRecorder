@@ -21,6 +21,12 @@
     // ouput file path
     NSString *docPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
     NSString *outputPath = [docPath stringByAppendingPathComponent:@"ScreenRecord.mp4"];
+    NSFileManager *fm = [NSFileManager defaultManager];
+    if ([fm fileExistsAtPath:outputPath]) {
+        if (![fm removeItemAtPath:outputPath error:nil]) {
+            NSLog(@"remove old output file failed.");
+        }
+    }
     NSURL *outputURL = [NSURL fileURLWithPath:outputPath];
     
     
@@ -52,7 +58,7 @@
     AVURLAsset *audioAsset = [[AVURLAsset alloc] initWithURL:audioURL options:nil];
     
     // use video time for audio time
-    CMTimeRange audioTimeRange = videoTimeRange;
+    CMTimeRange audioTimeRange = CMTimeRangeMake(kCMTimeZero, audioAsset.duration);
     
     // create audio channel
     AVMutableCompositionTrack *audioTrack = [composition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
@@ -78,18 +84,18 @@
     // export
     [assetExport exportAsynchronouslyWithCompletionHandler:^{
         // delete original video and audio file
-        NSFileManager *fm = [NSFileManager defaultManager];
-        if ([fm fileExistsAtPath:videoPath]) {
-            if (![fm removeItemAtPath:videoPath error:nil]) {
-                NSLog(@"remove video.mp4 failed.");
-            }
-        }
-        
-        if ([fm fileExistsAtPath:audioPath]) {
-            if (![fm removeItemAtPath:audioPath error:nil]) {
-                NSLog(@"remove audio.wav failed.");
-            }
-        }
+//
+//        if ([fm fileExistsAtPath:videoPath]) {
+//            if (![fm removeItemAtPath:videoPath error:nil]) {
+//                NSLog(@"remove video.mp4 failed.");
+//            }
+//        }
+//        
+//        if ([fm fileExistsAtPath:audioPath]) {
+//            if (![fm removeItemAtPath:audioPath error:nil]) {
+//                NSLog(@"remove audio.wav failed.");
+//            }
+//        }
         
         if (completion) {
             completion(outputPath);

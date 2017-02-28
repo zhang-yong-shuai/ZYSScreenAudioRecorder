@@ -12,10 +12,10 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^JKScreenRecording)(NSTimeInterval duration);
-typedef void(^JKScreenRecordStop)(NSString *videoPath, NSError *error);
+typedef void(^ZYSScreenRecording)(NSTimeInterval duration);
+typedef void(^ZYSScreenRecordStop)(NSString *videoPath);
 
-@interface JKScreenRecorder : NSObject
+@interface ZYSScreenRecorder : NSObject
 
 // reqeuired, captue view
 @property (nonatomic, strong) UIView *captureView;
@@ -37,9 +37,9 @@ typedef void(^JKScreenRecordStop)(NSString *videoPath, NSError *error);
 - (void)pauseRecording;
 
 // stopRecording
-- (void)stopRecordingWithHandler:(JKScreenRecordStop)handler;
+- (void)stopRecordingWithHandler:(ZYSScreenRecordStop)handler;
 
 // recording, can get duration
-- (void)screenRecording:(JKScreenRecording)screenRecording;
+- (void)screenRecording:(ZYSScreenRecording)screenRecording;
 
 @end

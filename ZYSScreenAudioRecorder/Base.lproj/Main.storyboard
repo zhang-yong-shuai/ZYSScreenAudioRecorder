@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,86 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Avj-h7-cOa">
+                                <rect key="frame" x="20" y="583" width="100" height="34"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.41568627450000001" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Hsg-bo-p8a"/>
+                                    <constraint firstAttribute="height" constant="34" id="JH4-ti-1hE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Start Record"/>
+                                <connections>
+                                    <action selector="startRecordBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LH4-hi-Rg1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGI-o6-cbg">
+                                <rect key="frame" x="137.5" y="583" width="100" height="34"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.41568627450000001" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Pause Record"/>
+                                <connections>
+                                    <action selector="pauseRecordBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HIW-xG-5pT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFi-Fn-BaS">
+                                <rect key="frame" x="255" y="583" width="100" height="34"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.41568627450000001" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="Stop Record"/>
+                                <connections>
+                                    <action selector="stopRecordBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ENE-rD-xvv"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rrA-XR-2C8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8y-Of-ap1">
+                                        <rect key="frame" x="122.5" y="259.5" width="130" height="34"/>
+                                        <color key="backgroundColor" red="0.94509803920000002" green="0.41568627450000001" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="FwJ-t8-JaN"/>
+                                            <constraint firstAttribute="width" constant="130" id="dsy-zd-z5B"/>
+                                        </constraints>
+                                        <state key="normal" title="Change Color"/>
+                                        <connections>
+                                            <action selector="changeColorBtnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fff-DC-XEf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="W8y-Of-ap1" firstAttribute="centerX" secondItem="rrA-XR-2C8" secondAttribute="centerX" id="9rd-Eq-LD1"/>
+                                    <constraint firstItem="W8y-Of-ap1" firstAttribute="centerY" secondItem="rrA-XR-2C8" secondAttribute="centerY" id="fMR-mI-3XG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oGI-o6-cbg" firstAttribute="height" secondItem="Avj-h7-cOa" secondAttribute="height" id="7mH-rW-eVh"/>
+                            <constraint firstItem="rrA-XR-2C8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="CDK-8P-KUL"/>
+                            <constraint firstAttribute="trailing" secondItem="rrA-XR-2C8" secondAttribute="trailing" id="DJz-o0-VmT"/>
+                            <constraint firstItem="Avj-h7-cOa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Eso-fH-szp"/>
+                            <constraint firstItem="zFi-Fn-BaS" firstAttribute="width" secondItem="oGI-o6-cbg" secondAttribute="width" id="FvW-Oq-e0V"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Avj-h7-cOa" secondAttribute="bottom" constant="50" id="Mb2-0t-LAO"/>
+                            <constraint firstAttribute="trailing" secondItem="zFi-Fn-BaS" secondAttribute="trailing" constant="20" id="NyH-9f-3pn"/>
+                            <constraint firstItem="rrA-XR-2C8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QjM-BW-Pyc"/>
+                            <constraint firstItem="oGI-o6-cbg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="T6G-vr-uEE"/>
+                            <constraint firstItem="oGI-o6-cbg" firstAttribute="centerY" secondItem="Avj-h7-cOa" secondAttribute="centerY" id="e5u-af-gTj"/>
+                            <constraint firstItem="zFi-Fn-BaS" firstAttribute="height" secondItem="oGI-o6-cbg" secondAttribute="height" id="ldj-aa-TBL"/>
+                            <constraint firstItem="zFi-Fn-BaS" firstAttribute="centerY" secondItem="oGI-o6-cbg" secondAttribute="centerY" id="mOI-V5-6yo"/>
+                            <constraint firstItem="Avj-h7-cOa" firstAttribute="top" secondItem="rrA-XR-2C8" secondAttribute="bottom" constant="30" id="oPb-XB-uOa"/>
+                            <constraint firstItem="oGI-o6-cbg" firstAttribute="width" secondItem="Avj-h7-cOa" secondAttribute="width" id="zNK-iW-5fk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recordingView" destination="rrA-XR-2C8" id="1jV-AY-SaW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
