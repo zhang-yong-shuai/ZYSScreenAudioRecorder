@@ -49,6 +49,9 @@
 
 - (IBAction)startRecordBtnClicked:(id)sender {
     [self.recorder startRecording];
+    [self.recorder screenRecording:^(NSTimeInterval duration) {
+        NSLog(@"时间: %.2lf", duration);
+    }];
 }
 
 - (IBAction)pauseRecordBtnClicked:(id)sender {
@@ -79,7 +82,7 @@
 #pragma mark - Getters
 - (ZYSScreenAudioRecorder *)recorder {
     if (!_recorder) {
-        _recorder = [[ZYSScreenAudioRecorder alloc] initWithRecordView:self.recordingView];
+        _recorder = [[ZYSScreenAudioRecorder alloc] initWithRecordLayer:self.recordingView.layer];
     }
     
     return _recorder;

@@ -43,7 +43,7 @@
 }
 
 #pragma mark - start / stop
-- (void)startRecordingWithCapture {
+- (void)startRecording {
     NSLog(@"录制开始");
     if (self.isPausing == NO) {
         [self setupVideoWriter];
@@ -214,14 +214,14 @@
 - (UIImage *)fetchScreenshot {
     UIImage *image = nil;
     
-    if (self.captureView) {
+    if (self.captureLayer) {
         NSLock *aLock = [NSLock new];
         [aLock lock];
         
-        CGSize imageSize = self.captureView.bounds.size;
+        CGSize imageSize = self.captureLayer.bounds.size;
         UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0);
         CGContextRef context = UIGraphicsGetCurrentContext();
-        [self.captureView.layer renderInContext:context];
+        [self.captureLayer renderInContext:context];
         image = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         

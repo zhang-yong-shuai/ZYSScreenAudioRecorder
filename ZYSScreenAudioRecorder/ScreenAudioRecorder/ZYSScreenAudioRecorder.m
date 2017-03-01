@@ -15,14 +15,17 @@
 @property (nonatomic, strong) ZYSScreenRecorder *screenRecorder;
 @property (nonatomic, strong) ZYSAudioRecorder *audioRecorder;
 
+// can get video duration
+@property (nonatomic, copy) ZYSScreenRecording screenRecording;
+
 @end
 
 @implementation ZYSScreenAudioRecorder
 
 #pragma mark - life cycle
-- (instancetype)initWithRecordView:(UIView *)view {
+- (instancetype)initWithRecordLayer:(CALayer *)layer {
     if (self = [super init]) {
-        self.recordingView = view;
+        self.recordingLayer = layer;
     }
     
     return self;
@@ -31,9 +34,12 @@
 #pragma mark - record operations
 /// start recording
 - (void)startRecording {
-    [self.screenRecorder startRecordingWithCapture];
+    __weak typeof (self) weakself = self;
+    [self.screenRecorder startRecording];
     [self.screenRecorder screenRecording:^(NSTimeInterval duration) {
-        NSLog(@"时间: %.2lf", duration);
+        if (weakself.screenRecording) {
+            weakself.screenRecording(duration);
+        }
     }];
     
     [self.audioRecorder startRecord];
@@ -62,11 +68,15 @@
     }];
 }
 
+- (void)screenRecording:(ZYSScreenRecording)screenRecording {
+    self.screenRecording = [screenRecording copy];
+}
+
 #pragma mark - Getters
 - (ZYSScreenRecorder *)screenRecorder {
     if (!_screenRecorder) {
         _screenRecorder = [ZYSScreenRecorder new];
-        _screenRecorder.captureView = self.recordingView;
+        _screenRecorder.captureLayer = self.recordingLayer;
     }
     
     return _screenRecorder;

@@ -18,7 +18,7 @@ typedef void(^ZYSScreenRecordStop)(NSString *videoPath);
 @interface ZYSScreenRecorder : NSObject
 
 // reqeuired, captue view
-@property (nonatomic, strong) UIView *captureView;
+@property (nonatomic, strong) CALayer *captureLayer;
 
 // optional, frame per second
 @property (nonatomic, assign) NSInteger frameRate;
@@ -31,7 +31,7 @@ typedef void(^ZYSScreenRecordStop)(NSString *videoPath);
 
 
 // start
-- (void)startRecordingWithCapture;
+- (void)startRecording;
 
 // pause
 - (void)pauseRecording;

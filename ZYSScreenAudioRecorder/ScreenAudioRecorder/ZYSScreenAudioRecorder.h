@@ -15,10 +15,10 @@
 
 @interface ZYSScreenAudioRecorder : NSObject
 
-@property (nonatomic, strong) UIView *recordingView;
+@property (nonatomic, strong) CALayer *recordingLayer;
 
 /// init with a recording view.
-- (instancetype)initWithRecordView:(UIView *)view;
+- (instancetype)initWithRecordLayer:(CALayer *)layer;
 
 /// start recording
 - (void)startRecording;
@@ -28,5 +28,8 @@
 
 /// stop recording
 - (void)stopRecordingWithHandler:(ZYSScreenRecordStop)handler;
+
+/// recording, can get duration
+- (void)screenRecording:(ZYSScreenRecording)screenRecording;
 
 @end
