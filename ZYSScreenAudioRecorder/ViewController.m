@@ -23,7 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
 }
 
 
@@ -59,13 +58,22 @@
 - (IBAction)stopRecordBtnClicked:(id)sender {
     [self.recorder stopRecordingWithHandler:^(NSString *videoPath) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            
             MPMoviePlayerViewController *player = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL fileURLWithPath:videoPath]];
             [player.moviePlayer setControlStyle:MPMovieControlStyleFullscreen];
             [player.moviePlayer prepareToPlay];
             [player.moviePlayer play];
             [self presentMoviePlayerViewControllerAnimated:player];
+            
+            [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(movieFinishedCallback:) name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
         });
     }];
+}
+
+// movie play finished.
+- (void)movieFinishedCallback:(NSNotification *)notifycation{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:MPMoviePlayerPlaybackDidFinishNotification object:nil];
+    [self dismissMoviePlayerViewControllerAnimated];
 }
 
 #pragma mark - Getters
