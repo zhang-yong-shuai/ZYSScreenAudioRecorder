@@ -84,18 +84,18 @@
     // export
     [assetExport exportAsynchronouslyWithCompletionHandler:^{
         // delete original video and audio file
-//
-//        if ([fm fileExistsAtPath:videoPath]) {
-//            if (![fm removeItemAtPath:videoPath error:nil]) {
-//                NSLog(@"remove video.mp4 failed.");
-//            }
-//        }
-//        
-//        if ([fm fileExistsAtPath:audioPath]) {
-//            if (![fm removeItemAtPath:audioPath error:nil]) {
-//                NSLog(@"remove audio.wav failed.");
-//            }
-//        }
+
+        if ([fm fileExistsAtPath:videoPath]) {
+            if (![fm removeItemAtPath:videoPath error:nil]) {
+                NSLog(@"remove video.mp4 failed.");
+            }
+        }
+        
+        if ([fm fileExistsAtPath:audioPath]) {
+            if (![fm removeItemAtPath:audioPath error:nil]) {
+                NSLog(@"remove audio.wav failed.");
+            }
+        }
         
         if (completion) {
             completion(outputPath);
