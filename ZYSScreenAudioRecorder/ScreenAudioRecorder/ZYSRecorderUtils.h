@@ -14,7 +14,7 @@
 
 typedef void (^ZYSExportVideoCompletion)(NSString *exportVideoPath);
 
-@interface ZYSRecordUtils : NSObject
+@interface ZYSRecorderUtils : NSObject
 
 + (void)mergeVideo:(NSString *)videoPath andAudio:(NSString *)audioPath withCompletion:(ZYSExportVideoCompletion)completion;
 

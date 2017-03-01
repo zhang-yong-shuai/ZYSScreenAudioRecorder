@@ -8,9 +8,9 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import <CoreMedia/CoreMedia.h>
-#import "ZYSRecordUtils.h"
+#import "ZYSRecorderUtils.h"
 
-@implementation ZYSRecordUtils
+@implementation ZYSRecorderUtils
 
 + (void)mergeVideo:(NSString *)videoPath andAudio:(NSString *)audioPath withCompletion:(ZYSExportVideoCompletion)completion {
     

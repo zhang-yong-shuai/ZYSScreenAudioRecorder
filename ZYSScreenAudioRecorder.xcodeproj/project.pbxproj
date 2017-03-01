@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5227BE911E666215000FB421 /* ZYSRecorderUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5227BE901E666215000FB421 /* ZYSRecorderUtils.m */; };
 		5236264E1E6579D400B8EDAD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5236264D1E6579D400B8EDAD /* main.m */; };
 		523626511E6579D400B8EDAD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 523626501E6579D400B8EDAD /* AppDelegate.m */; };
 		523626541E6579D400B8EDAD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 523626531E6579D400B8EDAD /* ViewController.m */; };
@@ -14,12 +15,13 @@
 		523626591E6579D400B8EDAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 523626581E6579D400B8EDAD /* Assets.xcassets */; };
 		5236265C1E6579D400B8EDAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5236265A1E6579D400B8EDAD /* LaunchScreen.storyboard */; };
 		5236266A1E657A5F00B8EDAD /* ZYSAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 523626651E657A5F00B8EDAD /* ZYSAudioRecorder.m */; };
-		5236266B1E657A5F00B8EDAD /* ZYSRecordUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 523626671E657A5F00B8EDAD /* ZYSRecordUtils.m */; };
 		5236266C1E657A5F00B8EDAD /* ZYSScreenRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 523626691E657A5F00B8EDAD /* ZYSScreenRecorder.m */; };
 		5236266F1E657A7600B8EDAD /* ZYSScreenAudioRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5236266E1E657A7600B8EDAD /* ZYSScreenAudioRecorder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5227BE8F1E666215000FB421 /* ZYSRecorderUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSRecorderUtils.h; sourceTree = "<group>"; };
+		5227BE901E666215000FB421 /* ZYSRecorderUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSRecorderUtils.m; sourceTree = "<group>"; };
 		523626491E6579D400B8EDAD /* ZYSScreenAudioRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZYSScreenAudioRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5236264D1E6579D400B8EDAD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5236264F1E6579D400B8EDAD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -32,8 +34,6 @@
 		5236265D1E6579D400B8EDAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		523626641E657A5F00B8EDAD /* ZYSAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSAudioRecorder.h; sourceTree = "<group>"; };
 		523626651E657A5F00B8EDAD /* ZYSAudioRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSAudioRecorder.m; sourceTree = "<group>"; };
-		523626661E657A5F00B8EDAD /* ZYSRecordUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSRecordUtils.h; sourceTree = "<group>"; };
-		523626671E657A5F00B8EDAD /* ZYSRecordUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSRecordUtils.m; sourceTree = "<group>"; };
 		523626681E657A5F00B8EDAD /* ZYSScreenRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSScreenRecorder.h; sourceTree = "<group>"; };
 		523626691E657A5F00B8EDAD /* ZYSScreenRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYSScreenRecorder.m; sourceTree = "<group>"; };
 		5236266D1E657A7600B8EDAD /* ZYSScreenAudioRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYSScreenAudioRecorder.h; sourceTree = "<group>"; };
@@ -95,10 +95,10 @@
 		523626631E657A5F00B8EDAD /* ScreenAudioRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				5227BE8F1E666215000FB421 /* ZYSRecorderUtils.h */,
+				5227BE901E666215000FB421 /* ZYSRecorderUtils.m */,
 				523626641E657A5F00B8EDAD /* ZYSAudioRecorder.h */,
 				523626651E657A5F00B8EDAD /* ZYSAudioRecorder.m */,
-				523626661E657A5F00B8EDAD /* ZYSRecordUtils.h */,
-				523626671E657A5F00B8EDAD /* ZYSRecordUtils.m */,
 				523626681E657A5F00B8EDAD /* ZYSScreenRecorder.h */,
 				523626691E657A5F00B8EDAD /* ZYSScreenRecorder.m */,
 				5236266D1E657A7600B8EDAD /* ZYSScreenAudioRecorder.h */,
@@ -179,11 +179,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				523626541E6579D400B8EDAD /* ViewController.m in Sources */,
-				5236266B1E657A5F00B8EDAD /* ZYSRecordUtils.m in Sources */,
 				523626511E6579D400B8EDAD /* AppDelegate.m in Sources */,
 				5236266F1E657A7600B8EDAD /* ZYSScreenAudioRecorder.m in Sources */,
 				5236264E1E6579D400B8EDAD /* main.m in Sources */,
 				5236266C1E657A5F00B8EDAD /* ZYSScreenRecorder.m in Sources */,
+				5227BE911E666215000FB421 /* ZYSRecorderUtils.m in Sources */,
 				5236266A1E657A5F00B8EDAD /* ZYSAudioRecorder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +339,7 @@
 				523626621E6579D400B8EDAD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,7 +8,7 @@
 
 #import "ZYSScreenAudioRecorder.h"
 #import "ZYSAudioRecorder.h"
-#import "ZYSRecordUtils.h"
+#import "ZYSRecorderUtils.h"
 
 @interface ZYSScreenAudioRecorder ()
 
@@ -50,7 +50,7 @@
     [self.audioRecorder stopRecord];
     [self.screenRecorder stopRecordingWithHandler:^(NSString *videoPath) {
         // merge video and audio
-        [ZYSRecordUtils mergeVideo:self.screenRecorder.videoPath andAudio:self.audioRecorder.audioPath withCompletion:^(NSString *exportVideoPath) {
+        [ZYSRecorderUtils mergeVideo:self.screenRecorder.videoPath andAudio:self.audioRecorder.audioPath withCompletion:^(NSString *exportVideoPath) {
             NSLog(@"视频合成成功！");
             
             if (exportVideoPath) {
